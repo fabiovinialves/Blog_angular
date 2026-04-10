@@ -1,10 +1,12 @@
 # Horizonte Blog
+![Angular](https://img.shields.io/badge/Angular-20+-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Standalone Components](https://img.shields.io/badge/Angular-Standalone_Components-0F172A?style=for-the-badge)
+![Responsive](https://img.shields.io/badge/Layout-Responsivo-22C55E?style=for-the-badge)
 
 Aplicação de blog desenvolvida com **Angular**, inspirada em um layout moderno de portal de viagens, com foco em **organização de projeto**, **componentização**, **boas práticas de arquitetura** e **experiência visual refinada**.
 
 > O projeto foi estruturado para servir como uma base sólida, demonstrando uma organização profissional utilizando os próprios recursos do ecossistema Angular, como **Standalone Components**, **lazy loading**, **roteamento**, **separação por camadas** e **componentes inteligentes e de apresentação**.
-
-
 
 ## Preview
 
