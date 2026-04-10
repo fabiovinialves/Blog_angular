@@ -1,0 +1,25 @@
+<article class="post-card">
+  <a class="post-card__image-link" [routerLink]="['/post', post().slug]">
+    <img [src]="post().coverImage" [alt]="post().title">
+    <span class="post-card__pill">{{ post().destination }}</span>
+  </a>
+
+  <div class="post-card__body">
+    <div class="post-card__header">
+      <h3>
+        <a [routerLink]="['/post', post().slug]">{{ post().title }}</a>
+      </h3>
+      <p>{{ post().excerpt }}</p>
+    </div>
+
+    <div class="post-card__footer">
+      <app-author-chip [author]="post().author" [dark]="true" [compact]="true"></app-author-chip>
+
+      <div class="post-card__meta">
+        <time>{{ post().publishedAt | date: 'dd MMM y' }}</time>
+        <span>•</span>
+        <span>{{ post().readTimeMinutes }} min de leitura</span>
+      </div>
+    </div>
+  </div>
+</article>

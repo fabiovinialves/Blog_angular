@@ -1,0 +1,128 @@
+.hero-feature {
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-feature__content {
+  width: 100%;
+  padding: clamp(24px, 4vw, 40px);
+  color: white;
+}
+
+.hero-feature__pill {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(10px);
+}
+
+.hero-feature__copy {
+  max-width: 580px;
+  margin-top: 14px;
+}
+
+.hero-feature__copy h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.hero-feature__copy p {
+  margin: 16px 0 0;
+  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-feature__footer {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.hero-feature__meta {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.95rem;
+}
+
+.hero-feature__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.52);
+}
+
+.hero-feature__cta {
+  display: inline-grid;
+  place-items: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 14px;
+  background: white;
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+.hero-feature__controls {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-feature__arrow {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  font-size: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.hero-feature__dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-feature__dot-button {
+  width: 9px;
+  height: 9px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.hero-feature__dot-button--active {
+  width: 28px;
+  border-radius: var(--radius-pill);
+  background: white;
+}
+
+@media (max-width: 760px) {
+  .hero-feature {
+    min-height: 480px;
+  }
+}

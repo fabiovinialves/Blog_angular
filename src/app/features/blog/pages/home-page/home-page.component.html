@@ -1,0 +1,52 @@
+<section class="home-page">
+  <header class="home-page__hero">
+    <div class="home-page__nav">
+      <app-top-nav
+        [searchQuery]="store.searchQuery()"
+        (searchQueryChange)="onSearch($event)"
+      ></app-top-nav>
+    </div>
+
+    @if (featuredPost(); as post) {
+      <app-hero-feature
+        [post]="post"
+        [activeIndex]="store.featuredIndex()"
+        [totalSlides]="featuredPosts().length"
+        (slideSelected)="onSelectHero($event)"
+      ></app-hero-feature>
+    }
+  </header>
+
+  <section class="home-page__content">
+    <div class="home-page__section-head">
+      <div>
+        <h2>Blog</h2>
+        <p>
+          Aqui você encontra dicas de viagem, roteiros e histórias visuais
+          para inspirar sua próxima aventura.
+        </p>
+      </div>
+
+      <app-sort-select
+        [value]="store.sortOption()"
+        (valueChange)="onSelectSort($event)"
+      ></app-sort-select>
+    </div>
+
+    <app-category-filter
+      [categories]="store.categories"
+      [selected]="store.selectedCategory()"
+      (selectionChange)="onSelectCategory($event)"
+    ></app-category-filter>
+
+    @if (posts().length) {
+      <div class="home-page__grid">
+        @for (post of posts(); track trackPost($index, post)) {
+          <app-post-card [post]="post"></app-post-card>
+        }
+      </div>
+    } @else {
+      <app-empty-state (reset)="store.clearFilters()"></app-empty-state>
+    }
+  </section>
+</section>

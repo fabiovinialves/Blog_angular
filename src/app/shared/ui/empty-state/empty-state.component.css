@@ -1,0 +1,44 @@
+.empty-state {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 48px 20px;
+  border-radius: var(--radius-lg);
+  background: white;
+  border: 1px dashed rgba(23, 33, 43, 0.22);
+}
+
+.empty-state__icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(49, 65, 79, 0.08);
+  color: var(--text-strong);
+  font-size: 1.5rem;
+}
+
+.empty-state h3 {
+  margin: 18px 0 10px;
+  color: var(--text-strong);
+  font-size: 1.4rem;
+}
+
+.empty-state p {
+  max-width: 440px;
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.empty-state button {
+  margin-top: 22px;
+  height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--text-strong);
+  color: white;
+  font-weight: 700;
+}

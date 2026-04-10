@@ -1,0 +1,135 @@
+.top-nav {
+  display: grid;
+  grid-template-columns: auto auto minmax(220px, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  color: white;
+}
+
+.top-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+}
+
+.top-nav__logo {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.16);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.top-nav__links {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.top-nav__links a,
+.top-nav__login {
+  color: rgba(255, 255, 255, 0.9);
+  transition: opacity var(--transition-fast);
+}
+
+.top-nav__links a:hover,
+.top-nav__login:hover {
+  opacity: 0.75;
+}
+
+.top-nav__search {
+  min-width: 0;
+  position: relative;
+  display: block;
+}
+
+.top-nav__search input {
+  width: 100%;
+  height: 46px;
+  padding: 0 46px 0 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+  outline: none;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.top-nav__search input::placeholder {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.top-nav__search input:focus {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.top-nav__search-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  translate: 0 -50%;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+}
+
+.top-nav__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  white-space: nowrap;
+}
+
+.top-nav__icon-button,
+.top-nav__signup {
+  height: 42px;
+  border: 0;
+  border-radius: 14px;
+}
+
+.top-nav__icon-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.top-nav__signup {
+  display: inline-grid;
+  place-items: center;
+  padding: 0 16px;
+  background: white;
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+@media (max-width: 1180px) {
+  .top-nav {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .top-nav__links {
+    display: none;
+  }
+}
+
+@media (max-width: 880px) {
+  .top-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .top-nav__actions {
+    justify-content: space-between;
+  }
+}

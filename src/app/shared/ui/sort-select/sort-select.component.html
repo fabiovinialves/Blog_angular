@@ -1,0 +1,8 @@
+<label class="sort-select">
+  <span>Ordenar por:</span>
+  <select [value]="value()" (change)="onChange($event)">
+    <option value="newest">Mais recentes</option>
+    <option value="oldest">Mais antigos</option>
+    <option value="read-time">Tempo de leitura</option>
+  </select>
+</label>

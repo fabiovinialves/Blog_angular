@@ -1,0 +1,73 @@
+<section class="post-detail">
+  <header class="post-detail__hero">
+    <div class="post-detail__nav">
+      <app-top-nav
+        [searchQuery]="store.searchQuery()"
+        (searchQueryChange)="onSearch($event)"
+      ></app-top-nav>
+    </div>
+
+    @if (post(); as currentPost) {
+      <div
+        class="post-detail__backdrop"
+        [style.background-image]="'linear-gradient(180deg, rgba(8, 12, 17, 0.22), rgba(8, 12, 17, 0.74)), url(' + currentPost.coverImage + ')'"
+      >
+        <div class="post-detail__intro">
+          <a class="post-detail__back-link" routerLink="/">← Voltar para o blog</a>
+
+          <span class="post-detail__pill">{{ currentPost.destination }}</span>
+
+          <h1>{{ currentPost.title }}</h1>
+          <p>{{ currentPost.excerpt }}</p>
+
+          <div class="post-detail__meta">
+            <app-author-chip [author]="currentPost.author"></app-author-chip>
+            <span>{{ currentPost.publishedAt | date: 'dd MMM y' }}</span>
+            <span>•</span>
+            <span>{{ currentPost.readTimeMinutes }} min de leitura</span>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="post-detail__missing">
+        <h1>Artigo não encontrado</h1>
+        <p>O conteúdo solicitado não existe ou foi removido.</p>
+        <a routerLink="/">Voltar para a página inicial</a>
+      </div>
+    }
+  </header>
+
+  @if (post(); as currentPost) {
+    <section class="post-detail__content">
+      <article class="post-detail__article">
+        <div class="post-detail__tags">
+          @for (tag of currentPost.tags; track tag) {
+            <span>{{ tag }}</span>
+          }
+        </div>
+
+        @for (paragraph of currentPost.content; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+
+        <div class="post-detail__quote">
+          “Um bom texto de viagem mistura atmosfera, clareza e intenção. Um roteiro memorável
+          começa muito antes do primeiro passo.”
+        </div>
+      </article>
+
+      <aside class="post-detail__aside">
+        <div class="post-detail__aside-card">
+          <h2>Histórias relacionadas</h2>
+          <p>Continue explorando com outras leituras selecionadas do mesmo universo editorial.</p>
+        </div>
+
+        <div class="post-detail__related-list">
+          @for (related of relatedPosts(); track related.id) {
+            <app-post-card [post]="related"></app-post-card>
+          }
+        </div>
+      </aside>
+    </section>
+  }
+</section>

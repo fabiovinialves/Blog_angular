@@ -1,0 +1,29 @@
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.category-filter__button {
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-default);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.category-filter__button:hover {
+  background: rgba(30, 48, 66, 0.05);
+}
+
+.category-filter__button--active {
+  background: white;
+  border-color: var(--border-soft);
+  color: var(--text-strong);
+  box-shadow: 0 8px 18px rgba(13, 26, 37, 0.08);
+}

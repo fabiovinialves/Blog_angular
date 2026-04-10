@@ -1,0 +1,36 @@
+<nav class="top-nav">
+  <div class="top-nav__brand">
+    <span class="top-nav__logo">H</span>
+    <div>
+      <strong>Horizonte</strong>
+    </div>
+  </div>
+
+  <div class="top-nav__links">
+    <a href="#!">Hotéis</a>
+    <a href="#!">Voos</a>
+    <a href="#!">Trens</a>
+    <a href="#!">Viagens</a>
+    <a href="#!">Aluguel de carros</a>
+  </div>
+
+  <label class="top-nav__search">
+    <span class="visually-hidden">Pesquisar destino</span>
+    <input
+      type="search"
+      placeholder="Pesquisar destino..."
+      [value]="searchQuery()"
+      (input)="onSearch($event)"
+    >
+    <span class="top-nav__search-icon">⌕</span>
+  </label>
+
+  <div class="top-nav__actions">
+    <button type="button" class="top-nav__icon-button" aria-label="Idioma do site">
+      🌐
+      <span>PT</span>
+    </button>
+    <a class="top-nav__login" href="#!">Entrar</a>
+    <a class="top-nav__signup" href="#!">Cadastrar</a>
+  </div>
+</nav>

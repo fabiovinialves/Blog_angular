@@ -1,0 +1,21 @@
+<div class="category-filter" aria-label="Categorias do blog">
+  <button
+    type="button"
+    class="category-filter__button"
+    [class.category-filter__button--active]="selected() === 'all'"
+    (click)="selectionChange.emit('all')"
+  >
+    Todos
+  </button>
+
+  @for (category of categories(); track category.id) {
+    <button
+      type="button"
+      class="category-filter__button"
+      [class.category-filter__button--active]="selected() === category.id"
+      (click)="selectionChange.emit(category.id)"
+    >
+      {{ category.label }}
+    </button>
+  }
+</div>

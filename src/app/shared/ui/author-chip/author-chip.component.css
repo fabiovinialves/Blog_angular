@@ -1,0 +1,49 @@
+.author-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.author-chip--dark {
+  color: var(--text-strong);
+}
+
+.author-chip__avatar {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.author-chip--dark .author-chip__avatar {
+  background: linear-gradient(180deg, #223241, #51616f);
+  color: white;
+  border-color: rgba(26, 42, 56, 0.15);
+}
+
+.author-chip__content {
+  display: grid;
+  gap: 2px;
+}
+
+.author-chip__content strong {
+  font-size: 0.95rem;
+  line-height: 1.1;
+}
+
+.author-chip__content span {
+  font-size: 0.78rem;
+  opacity: 0.88;
+}
+
+.author-chip--compact .author-chip__avatar {
+  width: 30px;
+  height: 30px;
+}

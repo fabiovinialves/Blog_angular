@@ -1,0 +1,58 @@
+<div class="hero-feature" [style.background-image]="'linear-gradient(180deg, rgba(8, 12, 17, 0.18), rgba(8, 12, 17, 0.6)), url(' + post().coverImage + ')'">
+  <div class="hero-feature__content">
+    <span class="hero-feature__pill">{{ post().destination }}</span>
+
+    <div class="hero-feature__copy">
+      <h1>{{ post().title }}</h1>
+      <p>{{ post().excerpt }}</p>
+    </div>
+
+    <div class="hero-feature__footer">
+      <div class="hero-feature__meta">
+        <app-author-chip [author]="post().author"></app-author-chip>
+        <span class="hero-feature__dot"></span>
+        <time>{{ post().publishedAt | date: 'dd MMM y' }}</time>
+        <span class="hero-feature__dot"></span>
+        <span>{{ post().readTimeMinutes }} min de leitura</span>
+      </div>
+
+      <a class="hero-feature__cta" [routerLink]="['/post', post().slug]">
+        Ler artigo
+      </a>
+    </div>
+
+    @if (totalSlides() > 1) {
+      <div class="hero-feature__controls">
+        <button
+          type="button"
+          class="hero-feature__arrow"
+          aria-label="Postagem anterior em destaque"
+          (click)="slideSelected.emit(activeIndex() - 1)"
+        >
+          ‹
+        </button>
+
+        <div class="hero-feature__dots" aria-label="Posts em destaque">
+          @for (index of slideIndexes(); track index) {
+            <button
+              type="button"
+              class="hero-feature__dot-button"
+              [class.hero-feature__dot-button--active]="index === activeIndex()"
+              [attr.aria-label]="'Mostrar post em destaque ' + (index + 1)"
+              (click)="slideSelected.emit(index)"
+            ></button>
+          }
+        </div>
+
+        <button
+          type="button"
+          class="hero-feature__arrow"
+          aria-label="Próxima postagem em destaque"
+          (click)="slideSelected.emit(activeIndex() + 1)"
+        >
+          ›
+        </button>
+      </div>
+    }
+  </div>
+</div>

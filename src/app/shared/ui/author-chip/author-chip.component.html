@@ -1,0 +1,9 @@
+<div class="author-chip" [class.author-chip--dark]="dark()" [class.author-chip--compact]="compact()">
+  <span class="author-chip__avatar">{{ author().avatarLabel }}</span>
+  <div class="author-chip__content">
+    <strong>{{ author().name }}</strong>
+    @if (!compact()) {
+      <span>{{ author().role }}</span>
+    }
+  </div>
+</div>
